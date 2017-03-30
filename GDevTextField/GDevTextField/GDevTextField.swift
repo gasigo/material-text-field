@@ -1,6 +1,6 @@
 //
-//  GDevTextField.swift
-//  GDevTextField
+//  File.swift
+//  MeuTreino
 //
 //  Created by Gabriel Gomes on 21/03/17.
 //  Copyright © 2017 Gabriel Gomes. All rights reserved.
@@ -33,7 +33,7 @@ public class GDevTextField: UITextField {
         }
     }
     
-    @IBInspectable open var titleColor: UIColor = UIColor.clear {
+    @IBInspectable open var titleColor: UIColor = UIColor.blue {
         didSet {
             if let title = self.titleLabel {
                 title.textColor = self.titleColor
@@ -57,7 +57,7 @@ public class GDevTextField: UITextField {
         }
     }
     
-    @IBInspectable open var lineColor: UIColor = UIColor.clear {
+    @IBInspectable open var lineColor: UIColor = UIColor.blue {
         didSet {
             if let line = self.lineView {
                 line.backgroundColor = self.lineColor
@@ -72,6 +72,30 @@ public class GDevTextField: UITextField {
             }
             
             self.lineView.frame = self.lineViewRectForBounds(self.bounds)
+        }
+    }
+    
+    @IBInspectable open var rightIcon: UIImage? {
+        didSet {
+            guard self.rightIcon != nil else {
+                return
+            }
+            
+            let imageView = UIImageView(image: self.rightIcon)
+            self.rightViewMode = .always
+            self.rightView = imageView
+        }
+    }
+    
+    @IBInspectable open var leftIcon: UIImage? {
+        didSet {
+            guard self.leftIcon != nil else {
+                return
+            }
+            
+            let imageView = UIImageView(image: self.leftIcon)
+            self.leftViewMode = .always
+            self.leftView = imageView
         }
     }
     
@@ -115,11 +139,27 @@ public class GDevTextField: UITextField {
     override public func prepareForInterfaceBuilder() {
         super.prepareForInterfaceBuilder()
         
-        self.borderStyle = .none
-        self.isSelected = true
+        self.configure()
+    }
+    
+    override public init(frame: CGRect) {
+        super.init(frame: frame)
+        
+        self.configure()
+    }
+    
+    required public init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        
+        self.configure()
     }
     
     //MARK: - Private Functions
+    
+    private func configure() {
+        self.borderStyle = .none
+        self.isSelected = true
+    }
     
     private func createTitleLabel() {
         
