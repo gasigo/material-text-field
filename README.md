@@ -1,12 +1,12 @@
-# GDevTextField
+# Material Text Field
 
-`GDevTextField` is a nice, flexible and customizable text field. This design is based on [Google's Material Design](https://material.io/guidelines/#) and is very much customizable and extensible.
+`material-text-field` is a nice, flexible and customizable text field. This design is based on [Google's Material Design](https://material.io/guidelines/#) and is very much customizable and extensible.
 
 ![](http://i65.tinypic.com/3462tfd.gif)
 
 ## Compatibility
 
-`GDevTextField` is compatible with Swift 3.
+`material-text-field` is compatible with Swift 3.
 
 ## Installation
 
@@ -16,7 +16,7 @@ You can download the project from `Github` and after doing so, copy the files in
 
 ### Interface Builder
 
-Most of the `GDevTextField's` properties are editable by the interface builder. This makes it much faster and easier to use. All you have to do is drag a UITextField and change it's Class to GDevTextField as shown below.
+Most of the `material-text-field's` properties are editable by the interface builder. This makes it much faster and easier to use. All you have to do is drag a UITextField and change it's Class to GDevTextField as shown below.
 
 ![](http://i65.tinypic.com/flan0l.png)
 
